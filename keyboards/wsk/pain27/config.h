@@ -16,7 +16,7 @@
 
 /* key matrix pins */
 #define MATRIX_ROW_PINS { F4, F5, D0 }
-#define MATRIX_COL_PINS { D2, B3, F6, B1, B2, B6, D4, C6, D7, E6 }
+#define MATRIX_COL_PINS { B5, B3, F6, B1, B2, B6, D4, C6, D7, E6 }
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */
@@ -30,6 +30,8 @@
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 5
+
+#define IGNORE_MOD_TAP_INTERRUPT
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE
