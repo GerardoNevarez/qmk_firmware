@@ -7,7 +7,7 @@ extern "C" {
 #endif
 
 void bluetooth_init(void);
-void bluetooth_task(void);
+void bluetooth_task(uint8_t USB_DeviceState);
 bool bluetooth_is_connected(void);
 void bluetooth_unpair(void);
 void bluetooth_send_keyboard(report_keyboard_t *report);

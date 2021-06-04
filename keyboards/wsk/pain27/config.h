@@ -48,3 +48,4 @@
 #define RGBLIGHT_VAL_STEP 8
 #endif
 
+#define DEBUG_MATRIX_SCAN_RATE

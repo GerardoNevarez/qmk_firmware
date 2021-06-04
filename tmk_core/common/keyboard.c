@@ -30,6 +30,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "sendchar.h"
 #include "eeconfig.h"
 #include "action_layer.h"
+#include "lufa.h"
 #ifdef BACKLIGHT_ENABLE
 #    include "backlight.h"
 #endif
@@ -427,7 +428,7 @@ MATRIX_LOOP_END:
 #endif
 
 #ifdef BLUETOOTH_ENABLE
-    bluetooth_task();
+    bluetooth_task(USB_DeviceState);
 #endif
 
     // update LED

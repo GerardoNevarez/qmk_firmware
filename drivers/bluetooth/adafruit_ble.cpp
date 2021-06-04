@@ -98,7 +98,7 @@ bool ble_init() {
     return true;
 }
 
-void bluetooth_task() {
+void bluetooth_task(uint8_t USB_DeviceState) {
     if (!state.configured && !ble_init()) return;
 
     switch (where_to_send()) {
@@ -107,7 +107,18 @@ void bluetooth_task() {
                 // if bluetooth is disconnected, where_to_send returns
                 // OUTPUT_NONE but if the desired output is OUTPUT_AUTO then we
                 // must make it possible to connect if usb is not connected
-                set_connectable(USB_DeviceState != DEVICE_STATE_Configured);
+
+                // set_connectable(USB_DeviceState != DEVICE_STATE_Configured);
+
+				//DEVICE_STATE_Configured                   = 4,
+                /**< May be implemented by the user project. This state indicates
+				*   that the device has been enumerated by the host and is ready
+				*   for USB communications to begin.
+				*/
+                dprintf("USB_DeviceState: %d", USB_DeviceState);
+                set_connectable(USB_DeviceState != 4);
+                //set_connectable(true);
+
                 break;
             }
 
