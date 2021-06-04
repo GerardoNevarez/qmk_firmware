@@ -115,9 +115,7 @@ void bluetooth_task(uint8_t USB_DeviceState) {
 				*   that the device has been enumerated by the host and is ready
 				*   for USB communications to begin.
 				*/
-                dprintf("USB_DeviceState: %d", USB_DeviceState);
                 set_connectable(USB_DeviceState != 4);
-                //set_connectable(true);
 
                 break;
             }
