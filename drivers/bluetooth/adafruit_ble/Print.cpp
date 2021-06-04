@@ -1,5 +1,5 @@
 /*
-  Modified from the original Print.h which was released under
+  Modified from the original Print.hpp which was released under
   the BSD License (below).
 
   Copyright (c) 2020 Joshua Rubin
@@ -22,7 +22,7 @@
 */
 
 #include <math.h>
-#include "Print.h"
+#include "Print.hpp"
 
 // Public Methods //////////////////////////////////////////////////////////////
 

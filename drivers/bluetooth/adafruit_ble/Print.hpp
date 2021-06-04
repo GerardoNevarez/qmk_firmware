@@ -1,5 +1,5 @@
 /*
-  Modified from the original Print.h which was released under
+  Modified from the original Print.hpp which was released under
   the BSD License (below).
 
   Copyright (c) 2020 Joshua Rubin

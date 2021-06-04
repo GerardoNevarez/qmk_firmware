@@ -26,7 +26,7 @@
 #pragma once
 
 #include <inttypes.h>
-#include "Print.h"
+#include "Print.hpp"
 
 // This enumeration provides the lookahead options for parseInt(), parseFloat()
 // The rules set out here are used until either the first valid character is found
