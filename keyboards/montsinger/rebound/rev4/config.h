@@ -41,6 +41,8 @@ diode)
  *
  */
 
+//#define MATRIX_ROW_PINS { D5, B7, D4, C6, F7, F6, F5, F4 }
+//#define MATRIX_ROW_PINS { D1, D0, D4, C6, F7, F6, F5, F4 }
 #define MATRIX_ROW_PINS { D1, D0, D4, C6, F7, F6, F5, F4 }
 #define MATRIX_COL_PINS { D7, E6, B4, B5, B2, B3, B1 }
 #define UNUSED_PINS { B6 }
@@ -61,7 +63,34 @@ diode)
 
 /* ws2812 RGB LED */
 #define RGB_DI_PIN B6
-#define RGBLED_NUM 17
+#ifdef RGB_DI_PIN
+  #undef RGBLED_NUM
+  #define RGBLED_NUM 12
+  #define RGBLIGHT_HUE_STEP 10
+  #define RGBLIGHT_SAT_STEP 10
+  #define RGBLIGHT_VAL_STEP 10
+  #define RGBLIGHT_LIMIT_VAL 130 /* The maximum brightness level */
+  #define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+// /*== all animations enable ==*/
+  #define RGBLIGHT_ANIMATIONS
+// /*== or choose animations ==*/
+//   #define RGBLIGHT_EFFECT_BREATHING
+//   #define RGBLIGHT_EFFECT_RAINBOW_MOOD
+//   #define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+//   #define RGBLIGHT_EFFECT_SNAKE
+//   #define RGBLIGHT_EFFECT_KNIGHT
+//   #define RGBLIGHT_EFFECT_CHRISTMAS
+//   #define RGBLIGHT_EFFECT_STATIC_GRADIENT
+//   #define RGBLIGHT_EFFECT_RGB_TEST
+//   #define RGBLIGHT_EFFECT_ALTERNATING
+// /*== customize breathing effect ==*/
+//   /*==== (DEFAULT) use fixed table instead of exp() and sin() ====*/
+//   #define RGBLIGHT_BREATHE_TABLE_SIZE 256      // 256(default) or 128 or 64
+//   /*==== use exp() and sin() ====*/
+//   #define RGBLIGHT_EFFECT_BREATHE_CENTER 1.85  // 1 to 2.7
+//   #define RGBLIGHT_EFFECT_BREATHE_MAX    255   // 0 to 255
+#endif
+
 
 /* Bootmagic Lite key configuration */
 // #define BOOTMAGIC_LITE_ROW 0
