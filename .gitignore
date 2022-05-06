@@ -92,3 +92,7 @@ user_song_list.h
 compile_commands.json
 .clangd/
 .cache/
+
+#not needed for AVR
+lib/pico-sdk/
+

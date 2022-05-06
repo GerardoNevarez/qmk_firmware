@@ -6,3 +6,5 @@
 
 #define VIAL_UNLOCK_COMBO_ROWS { 2, 0, 0 }
 #define VIAL_UNLOCK_COMBO_COLS { 0, 0, 4 }
+#define VIAL_TAP_DANCE_ENTRIES 36
+
