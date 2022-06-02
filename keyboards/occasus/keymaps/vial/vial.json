@@ -1,0 +1,71 @@
+{
+    "name": "occasus",
+    "matrix": {
+      "rows": 5,
+      "cols": 12
+    },
+  "layouts": {
+      "LAYOUT": {
+          "layout": [
+              {"label": "ESC",   "x": 0,  "y": 0},
+              {"label": "ONE",   "x": 1,  "y": 0},
+              {"label": "TWO",   "x": 2,  "y": 0},
+              {"label": "THREE", "x": 3,  "y": 0},
+              {"label": "FOUR",  "x": 4,  "y": 0},
+              {"label": "FIVE",  "x": 5,  "y": 0},
+              {"label": "SIX",   "x": 6,  "y": 0},
+              {"label": "SEVEN", "x": 7,  "y": 0},
+              {"label": "EIGHT", "x": 8,  "y": 0},
+              {"label": "NINE",  "x": 9,  "y": 0},
+              {"label": "TEN",   "x": 10, "y": 0},
+              {"label": "BKSP",  "x": 11, "y": 0},
+              
+              {"label": "TAB",   "x": 0,  "y": 1},
+              {"label": "Q",     "x": 1,  "y": 1},
+              {"label": "W",     "x": 2,  "y": 1},
+              {"label": "E",     "x": 3,  "y": 1},
+              {"label": "R",     "x": 4,  "y": 1},
+              {"label": "T",     "x": 5,  "y": 1},
+              {"label": "Y",     "x": 6,  "y": 1},
+              {"label": "U",     "x": 7,  "y": 1},
+              {"label": "I",     "x": 8,  "y": 1},
+              {"label": "O",     "x": 9,  "y": 1},
+              {"label": "P",     "x": 10, "y": 1},
+              {"label": "DEL",   "x": 11, "y": 1},
+
+              {"label": "CAPS",  "x": 0,  "y": 2},
+              {"label": "A",     "x": 1,  "y": 2},
+              {"label": "S",     "x": 2,  "y": 2},
+              {"label": "D",     "x": 3,  "y": 2},
+              {"label": "F",     "x": 4,  "y": 2},
+              {"label": "G",     "x": 5,  "y": 2},
+              {"label": "H",     "x": 6,  "y": 2},
+              {"label": "J",     "x": 7,  "y": 2},
+              {"label": "K",     "x": 8,  "y": 2},
+              {"label": "L",     "x": 9,  "y": 2},
+              {"label": "AT",    "x": 10, "y": 2},
+              {"label": "PLUS",  "x": 11, "y": 2},
+
+              {"label": "SHIFT", "x": 0,  "y": 3},
+              {"label": "Z",     "x": 1,  "y": 3},
+              {"label": "X",     "x": 2,  "y": 3},
+              {"label": "C",     "x": 3,  "y": 3},
+              {"label": "V",     "x": 4,  "y": 3},
+              {"label": "B",     "x": 5,  "y": 3},
+              {"label": "N",     "x": 6,  "y": 3},
+              {"label": "M",     "x": 7,  "y": 3},
+              {"label": "COMMA", "x": 8,  "y": 3},
+              {"label": "DOT",   "x": 9,  "y": 3},
+              {"label": "DASH",  "x": 10, "y": 3},
+              {"label": "ENT",   "x": 11, "y": 3},
+
+              {"label": "ALTL",  "x": 3,  "y": 4},
+              {"label": "RAISE", "x": 4,  "y": 4},
+              {"label": "SPC1",  "x": 5,  "y": 4},
+              {"label": "SPC2",  "x": 6,  "y": 4},
+              {"label": "LOWER", "x": 7,  "y": 4},
+              {"label": "ALTR",  "x": 8,  "y": 4}
+          ]
+      }
+  }
+}
