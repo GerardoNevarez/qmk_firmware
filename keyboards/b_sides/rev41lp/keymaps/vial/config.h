@@ -1,0 +1,15 @@
+#pragma once
+
+
+/*
+#define TAPPING_TERM 150 
+#define TAPPING_TERM_PER_KEY
+//#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+//#define TAPPING_FORCE_HOLD
+*/
+
+#define VIAL_KEYBOARD_UID {0xDE, 0x6E, 0x0C, 0xA6, 0x14, 0xC7, 0x7E, 0x9A}
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 1 }
+
