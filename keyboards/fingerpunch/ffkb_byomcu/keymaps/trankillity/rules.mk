@@ -1,7 +1,7 @@
 NKRO_ENABLE = yes
 COMBO_ENABLE = yes
 KEY_OVERRIDE_ENABLE = yes
-# RGB_MATRIX_LEDMAPS = yes
+RGB_MATRIX_LEDMAPS = yes
 
 VPATH += keyboards/gboards
 SRC += features/casemodes.c
