@@ -119,20 +119,52 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef RGB_MATRIX_LEDMAPS_ENABLED
 
-// #undef ______
-// #define ______ HSV_BLACK
+#undef _______
+#define _______ HSV_OFF
+
+// HSV convenience shortcuts
+#define HIGHLGT HSV_TEAL
+#define NUMBERS HSV_MAGENTA
+#define FUNCTNS HSV_GOLD
+#define MDIACTR HSV_PURPLE
+#define MODIFRS HSV_CYAN
+#define DIRARWS HSV_GREEN
+#define WARNING HSV_RED
+#define WHITEFN 1,1,255
+
 
 const ledmap PROGMEM ledmaps[] = {
-//   ______, ______, ______, ______, ______, ______,      ______, ______, ______, ______, ______, ______,
-//   ______, ______, ______, ______, ______, ______,      ______, ______, ______, ______, ______, ______,
-//   ______, ______, ______, ______, ______, ______,      ______, ______, ______, ______, ______, ______,
-//                           ______, ______, ______,      ______, ______, ______
+/*
+    Blank LED Map
+    _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+    _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+                                        _______,    _______,    _______,            _______,    _______,    _______
+*/
+    [_BASE] = RGB_MATRIX_LAYOUT_LEDMAP(
+    HIGHLGT,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    HIGHLGT,
+    HIGHLGT,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    HIGHLGT,
+    HIGHLGT,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    HIGHLGT,
+                                        HIGHLGT,    HIGHLGT,    HIGHLGT,            HIGHLGT,    HIGHLGT,    HIGHLGT
+    ),
     [_NUMB] = RGB_MATRIX_LAYOUT_LEDMAP(
-  HSV_AZURE, HSV_BLACK, HSV_YELLOW, HSV_BLACK, HSV_ORANGE, HSV_BLACK,      HSV_AZURE, HSV_BLACK, HSV_YELLOW, HSV_BLACK, HSV_ORANGE, HSV_BLACK,
-  HSV_BLACK, HSV_RED, HSV_BLACK, HSV_PURPLE, HSV_BLACK, HSV_TEAL,      HSV_BLACK, HSV_RED, HSV_BLACK, HSV_PURPLE, HSV_BLACK, HSV_TEAL,
-  HSV_AZURE, HSV_BLACK, HSV_YELLOW, HSV_BLACK, HSV_ORANGE, HSV_BLACK,      HSV_AZURE, HSV_BLACK, HSV_YELLOW, HSV_BLACK, HSV_ORANGE, HSV_BLACK,
-                    HSV_BLACK, HSV_BLUE, HSV_BLACK,      HSV_YELLOW, HSV_BLACK, HSV_RED
-    )
+    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,            _______,    NUMBERS,    NUMBERS,    NUMBERS,    _______,    _______,
+    HIGHLGT,    MODIFRS,    MODIFRS,    MODIFRS,    MODIFRS,    _______,            _______,    NUMBERS,    NUMBERS,    NUMBERS,    _______,    _______,
+    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,            _______,    NUMBERS,    NUMBERS,    NUMBERS,    _______,    _______,
+                                        HIGHLGT,    _______,    _______,            _______,    NUMBERS,    _______
+    ),
+    [_NAVI] = RGB_MATRIX_LAYOUT_LEDMAP(
+    WHITEFN,    FUNCTNS,    FUNCTNS,    DIRARWS,    FUNCTNS,    FUNCTNS,            WARNING,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    _______,
+    HIGHLGT,    FUNCTNS,    DIRARWS,    DIRARWS,    DIRARWS,    FUNCTNS,            MDIACTR,    MODIFRS,    MODIFRS,    MODIFRS,    MODIFRS,    HIGHLGT,
+    WHITEFN,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,    FUNCTNS,            MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,
+                                        _______,    _______,    _______,            _______,    _______,    HIGHLGT
+    ),
+    [_SYST] = RGB_MATRIX_LAYOUT_LEDMAP(
+    _______,    MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,            MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,    MDIACTR,    _______,
+    WARNING,    _______,    _______,    _______,    _______,    WHITEFN,            WHITEFN,    _______,    _______,    _______,    _______,    WARNING,
+    WARNING,    _______,    _______,    FUNCTNS,    FUNCTNS,    _______,            _______,    FUNCTNS,    FUNCTNS,    _______,    _______,    WARNING,
+                                        HIGHLGT,    _______,    _______,            _______,    _______,    HIGHLGT
+    ),
 };
 
 #endif // RGB_MATRIX_LEDMAPS_ENABLED
