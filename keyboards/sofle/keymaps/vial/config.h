@@ -59,7 +59,8 @@
 #define RGBLIGHT_LAYERS
 
 /* ws2812 RGB LED */
-#define RGB_DI_PIN D3
+//#define RGB_DI_PIN D3
+#define RGB_DI_PIN 0
 
 
 #ifdef RGB_MATRIX_ENABLE 
