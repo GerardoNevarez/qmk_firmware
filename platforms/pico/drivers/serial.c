@@ -15,7 +15,6 @@
 #include "hardware/gpio.h"
 #include "hardware/sync.h"
 #include "hardware/irq.h"
-#include <stdio.h>
 
 #ifndef SELECT_SOFT_SERIAL_SPEED
 #    define SELECT_SOFT_SERIAL_SPEED 1
@@ -148,15 +147,6 @@ static int __no_inline_not_in_flash_func(sync_recv)(void) {
     serial_input();
 
     volatile uint64_t timeout = time_us_64() + 10000;
-    while (!serial_read_pin() && time_us_64() < timeout) {
-        // tight_loop_contents();
-    }
-    if (time_us_64() >= timeout) {
-        // dprintf("serial::NO_RESPONSE0\n");
-        return -1;
-    }
-
-    timeout = time_us_64() + 10000;
     while (serial_read_pin() && time_us_64() < timeout) {
         // tight_loop_contents();
     }
@@ -230,9 +220,18 @@ static void __no_inline_not_in_flash_func(interrupt_handler)(uint gpio, uint32_t
     gpio_set_irq_enabled_with_callback(SOFT_SERIAL_PIN, GPIO_IRQ_EDGE_FALL,
                                        false, interrupt_handler);
 
-    while (!serial_read_pin()) {
+    volatile uint64_t timeout = time_us_64() + 10000;
+    while (!serial_read_pin() && time_us_64() < timeout) {
         continue;
     }
+    if (time_us_64() >= timeout) {
+        serial_input();
+        gpio_set_irq_enabled_with_callback(SOFT_SERIAL_PIN, GPIO_IRQ_EDGE_FALL,
+                                           true, interrupt_handler);
+        restore_interrupts(interrupt_status);
+        return;
+    }
+
     serial_delay_blip();
 
     sync_send();
@@ -245,8 +244,16 @@ static void __no_inline_not_in_flash_func(interrupt_handler)(uint gpio, uint32_t
     split_transaction_desc_t *trans;
 
     serial_input();
-    while (!serial_read_pin()) {
+    timeout = time_us_64() + 10000;
+    while (!serial_read_pin() && time_us_64() < timeout) {
         continue;
+    }
+    if (time_us_64() >= timeout) {
+        serial_input();
+        gpio_set_irq_enabled_with_callback(SOFT_SERIAL_PIN, GPIO_IRQ_EDGE_FALL,
+                                           true, interrupt_handler);
+        restore_interrupts(interrupt_status);
+        return;
     }
 
     // activate receive
