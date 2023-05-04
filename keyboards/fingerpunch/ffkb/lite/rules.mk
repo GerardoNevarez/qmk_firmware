@@ -1,4 +1,4 @@
-PIN_COMPATIBLE=elite_c
+PIN_COMPATIBLE=promicro
 
 DEFERRED_EXEC_ENABLE = yes
 SRC +=  keyboards/fingerpunch/src/fp.c \
